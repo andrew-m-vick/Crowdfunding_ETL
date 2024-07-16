@@ -64,13 +64,13 @@ REFERENCES "subcategory" ("subcategory_id");
 
 -- Show the tables if exist
 SELECT * 
-FROM category
+FROM category;
 
 SELECT * 
-FROM subcategory
+FROM subcategory;
 
 SELECT * 
-FROM contacts
+FROM contact;
 
 SELECT *
-FROM campaign
+FROM campaign;
