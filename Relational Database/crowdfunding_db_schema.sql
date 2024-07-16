@@ -1,4 +1,8 @@
-CREATE TABLE "Campaign" (
+﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
+-- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
+
+
+CREATE TABLE "campaign" (
     "cf_id" CHAR(4)   NOT NULL,
     "contact_id" CHAR(4)   NOT NULL,
     "company_name" VARCHAR(50)   NOT NULL,
@@ -13,46 +17,47 @@ CREATE TABLE "Campaign" (
     "end_date" DATE   NOT NULL,
     "category_id" CHAR(4)   NOT NULL,
     "subcategory_id" VARCHAR(20)   NOT NULL,
-	"Last_Updated" Timestamp DEFAULT Localtimestamp NOT NULL,
-    CONSTRAINT "pk_Campaign" PRIMARY KEY (
+    "Last_Updated" Timestamp DEFAULT Localtimestamp NOT NULL,
+    CONSTRAINT "pk_campaign" PRIMARY KEY (
         "cf_id"
      )
 );
 
-CREATE TABLE "Contact" (
+CREATE TABLE "contact" (
     "contact_id" CHAR(4)   NOT NULL,
     "first_name" VARCHAR(50)   NOT NULL,
     "last_name" VARCHAR(50)   NOT NULL,
     "email" VARCHAR(100)   NOT NULL,
-	"Last_Updated" Timestamp DEFAULT Localtimestamp NOT NULL,
-    CONSTRAINT "pk_Contact" PRIMARY KEY (
+    "Last_Updated" Timestamp DEFAULT Localtimestamp NOT NULL,
+    CONSTRAINT "pk_contact" PRIMARY KEY (
         "contact_id"
      )
 );
 
-CREATE TABLE "Category" (
+CREATE TABLE "category" (
     "category_id" CHAR(4)   NOT NULL,
     "category_name" VARCHAR(30)   NOT NULL,
-	"Last_Updated" Timestamp DEFAULT Localtimestamp NOT NULL,
-    CONSTRAINT "pk_Category" PRIMARY KEY (
+    "Last_Updated" Timestamp DEFAULT Localtimestamp NOT NULL,
+    CONSTRAINT "pk_category" PRIMARY KEY (
         "category_id"
      )
 );
 
-CREATE TABLE "Subcategory" (
+CREATE TABLE "subcategory" (
     "subcategory_id" VARCHAR(20)   NOT NULL,
     "subcategory_name" VARCHAR(20)   NOT NULL,
-	"Last_Updated" Timestamp DEFAULT Localtimestamp NOT NULL,
-    CONSTRAINT "pk_Subcategory" PRIMARY KEY (
+    "Last_Updated" Timestamp DEFAULT Localtimestamp NOT NULL,
+    CONSTRAINT "pk_subcategory" PRIMARY KEY (
         "subcategory_id"
      )
 );
 
-ALTER TABLE "Campaign" ADD CONSTRAINT "fk_Campaign_contact_id" FOREIGN KEY("contact_id")
-REFERENCES "Contact" ("contact_id");
+ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_contact_id" FOREIGN KEY("contact_id")
+REFERENCES "contact" ("contact_id");
 
-ALTER TABLE "Campaign" ADD CONSTRAINT "fk_Campaign_category_id" FOREIGN KEY("category_id")
-REFERENCES "Category" ("category_id");
+ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_category_id" FOREIGN KEY("category_id")
+REFERENCES "category" ("category_id");
 
-ALTER TABLE "Campaign" ADD CONSTRAINT "fk_Campaign_subcategory_id" FOREIGN KEY("subcategory_id")
-REFERENCES "Subcategory" ("subcategory_id");
+ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_subcategory_id" FOREIGN KEY("subcategory_id")
+REFERENCES "subcategory" ("subcategory_id");
+
