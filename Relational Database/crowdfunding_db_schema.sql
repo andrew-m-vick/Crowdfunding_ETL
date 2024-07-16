@@ -1,7 +1,3 @@
-﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
--- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
-
-
 CREATE TABLE "Campaign" (
     "cf_id" CHAR(4)   NOT NULL,
     "contact_id" CHAR(4)   NOT NULL,
@@ -17,6 +13,7 @@ CREATE TABLE "Campaign" (
     "end_date" DATE   NOT NULL,
     "category_id" CHAR(4)   NOT NULL,
     "subcategory_id" VARCHAR(20)   NOT NULL,
+	"Last_Updated" Timestamp DEFAULT Localtimestamp NOT NULL,
     CONSTRAINT "pk_Campaign" PRIMARY KEY (
         "cf_id"
      )
@@ -27,6 +24,7 @@ CREATE TABLE "Contact" (
     "first_name" VARCHAR(50)   NOT NULL,
     "last_name" VARCHAR(50)   NOT NULL,
     "email" VARCHAR(100)   NOT NULL,
+	"Last_Updated" Timestamp DEFAULT Localtimestamp NOT NULL,
     CONSTRAINT "pk_Contact" PRIMARY KEY (
         "contact_id"
      )
@@ -35,6 +33,7 @@ CREATE TABLE "Contact" (
 CREATE TABLE "Category" (
     "category_id" CHAR(4)   NOT NULL,
     "category_name" VARCHAR(30)   NOT NULL,
+	"Last_Updated" Timestamp DEFAULT Localtimestamp NOT NULL,
     CONSTRAINT "pk_Category" PRIMARY KEY (
         "category_id"
      )
@@ -43,6 +42,7 @@ CREATE TABLE "Category" (
 CREATE TABLE "Subcategory" (
     "subcategory_id" VARCHAR(20)   NOT NULL,
     "subcategory_name" VARCHAR(20)   NOT NULL,
+	"Last_Updated" Timestamp DEFAULT Localtimestamp NOT NULL,
     CONSTRAINT "pk_Subcategory" PRIMARY KEY (
         "subcategory_id"
      )
@@ -56,4 +56,3 @@ REFERENCES "Category" ("category_id");
 
 ALTER TABLE "Campaign" ADD CONSTRAINT "fk_Campaign_subcategory_id" FOREIGN KEY("subcategory_id")
 REFERENCES "Subcategory" ("subcategory_id");
-
