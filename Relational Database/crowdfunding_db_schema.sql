@@ -12,12 +12,12 @@ CREATE TABLE "campaign" (
     "outcome" VARCHAR(10)   NOT NULL,
     "backers_count" INTEGER   NOT NULL,
     "country" VARCHAR(60)   NOT NULL,
-    "currency" INTEGER   NOT NULL,
+    "currency" VARCHAR (5)  NOT NULL,
     "launch_date" DATE   NOT NULL,
     "end_date" DATE   NOT NULL,
     "category_id" CHAR(4)   NOT NULL,
     "subcategory_id" VARCHAR(20)   NOT NULL,
-    "Last_Updated" Timestamp DEFAULT Localtimestamp NOT NULL,
+    "Last_Updated" Timestamp NULL,
     CONSTRAINT "pk_campaign" PRIMARY KEY (
         "cf_id"
      )
