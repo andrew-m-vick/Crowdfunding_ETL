@@ -10,5 +10,4 @@ Built in Python, Jupyter Notebook and PosgreSQL(PgAdmin) using
 pandas, numpy, datetime, Json, SQLalchemy, matplotlib, seaborn, scipy
 
 
-
-
+Our official writeup in the write up folder contains the findings on this project.
