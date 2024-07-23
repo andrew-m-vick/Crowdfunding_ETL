@@ -8,4 +8,3 @@ Our official writeup contains our database design, ETL code overview, analysis, 
 ## Built In
 
 Built in Python, Jupyter Notebook and PosgreSQL(PgAdmin) using pandas, numpy, datetime, Json, SQLalchemy, matplotlib, seaborn, and scipy.
-
