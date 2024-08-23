@@ -4,9 +4,22 @@
 
 ![ETL](ETL_Image/ETL.png)
 
-Project 2 is an Extract, Transform, and Load pipeline project. The team members include Andrew Vick, Elizabeth Viramontes, and Sarah Ruth. We built an ETL pipeline using Excel files and starter code that were provided. The project started with the team reviewing the materials and creating an ERD diagram and schema using the QuickDBD tool. Then we extracted the data from the Excel files, transformed the data into dataframes, and saved them off as CSV files. The schema and CSV files were loaded into PosgreSQL to create the Crowdfunding database. Finally, we were able to write queries and generate visualizations.
-Our official writeup contains our database design, ETL code overview, analysis, visualizations, Bias and Limitation, and conclusion.
+## **Crowdfunding Analysis**
 
-## Built In
+This project analyzes crowdfunding campaign data to understand factors influencing success. We extracted data from Excel files, transformed it into a relational database, and used SQL queries to generate visualizations and insights.
 
-Built in Python, Jupyter Notebook and PosgreSQL(PgAdmin) using pandas, numpy, datetime, Json, SQLalchemy, matplotlib, seaborn, and scipy.
+## Key Findings:
+
+- **Campaign Outcomes**: Most campaigns are successful, followed by failed, then canceled and live.
+- **Pledged Amounts by Country**: The United States dominates contributions, followed by Canada.
+- **Pledged Amounts by Goal Range**: Campaigns with higher goals tend to attract more pledges.
+- **Relationship Between Goal and Total Pledged**: Successful campaigns generally have higher pledged amounts.
+- **Distribution of Pledged Amounts by Outcome**: All outcomes have a wide range of pledged amounts, with failed campaigns clustering around lower amounts.
+- **Regression Plot of Goal vs. Backers**: There's a positive correlation between goals and backers, but it plateaus at higher goal levels.
+
+## Limitations and Future Work:
+
+- The dataset lacks demographic and contextual information that could explain campaign outcomes.
+- Future work could incorporate data on target audience, socioeconomic factors, event details, and cancellation reasons.
+
+This project provides valuable insights into crowdfunding dynamics. The findings can inform campaign strategies and help creators understand factors influencing success.
